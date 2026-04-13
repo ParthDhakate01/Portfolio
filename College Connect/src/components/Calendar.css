@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
+.fc {
+  padding: 20px;
+  background-color: #1f1f1f;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  height: 79vh;
+}
+.fc .fc-button {
+  background-color: #1f1f1f;
+  border: 1px solid #333333;
+  color: white;
+}
+.fc .fc-today-button {
+  background-color: #28333f;
+  border: 1px solid #333333;
+  color: white;
+}
+.fc .fc-button:hover {
+  background-color: #1f1f1f !important;
+  border: 1px solid white !important;
+  color: white !important;
+  transition: all ease-in-out 0.3s;
+}
+.fc .fc-button:active {
+  background-color: #1f1f1f !important;
+  border: 1px solid white !important;
+  color: white !important;
+  transition: all ease-in-out 0.3s;
+}
+.fc .fc-button:hover {
+  background-color: #1f1f1f !important;
+  color: white !important;
+  transition: all ease-in-out 0.3s;
+}
+.fc-toolbar-chunk h2 {
+  font-family: "Newsreader", serif;
+  font-weight: 600;
+  color: white;
+}
+.fc .fc-timeGridWeek-button:focus {
+  background-color: #2b2b2b;
+}
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th {
+  border: 1px solid #333333;
+}
+.fc .fc-scrollgrid {
+  border: 1px solid #333333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.fc .fc-col-header-cell-cushion {
+  color: #8c8c8c;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+.fc-timegrid-axis-cushion.fc-scrollgrid-shrink-cushion.fc-scrollgrid-sync-inner {
+  color: white;
+}
+.fc-timegrid-slot-label-cushion.fc-scrollgrid-shrink-cushion {
+  color: white;
+}
+.fc .fc-event-time {
+  display: none;
+}
+/* line */
+.fc .fc-timegrid-now-indicator-line {
+  border-top: 2px solid blue; /* red */
+}
+
+/* arrow on left */
+.fc .fc-timegrid-now-indicator-arrow {
+  border-top-color: red;
+}

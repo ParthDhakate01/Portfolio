@@ -1,0 +1,48 @@
+@import "tailwindcss";
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
+
+/* ── Creation animations ── */
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.88) translateY(10px); }
+  70%  { transform: scale(1.03) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-todo-in {
+  animation: slide-in-up 0.78s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-form-in {
+  animation: slide-in-down 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-event-in {
+  animation: pop-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
