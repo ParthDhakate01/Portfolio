@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parth Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Glow -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a href="#" class="logo">PD</a>
+
+    <nav class="navbar" id="navbar">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="#contact" class="btn btn-primary desktop-btn">Get In Touch</a>
+      <button class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero section" id="home">
+    <div class="hero-left reveal">
+      <span class="hero-badge">Available for freelance & internships</span>
+
+      <h1>Hi, I'm <span>Parth Dhakate</span></h1>
+
+      <h2>I’m a <span id="typing"></span></h2>
+
+      <p>
+        I build modern, responsive, and attractive websites with clean UI.
+        I’m also exploring machine learning and creating real-world college projects.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          View My Work <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="#" class="btn btn-dark">
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/ParthDhakate01" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/parthdhakate" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/parth_dhakate/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-solid fa-envelope" target="_blank"></i></a>
+      </div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="hero-shape"></div>
+      <div class="hero-image-card">
+        <img src="me.jpeg" alt="Profile">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="about-left reveal">
+      <h2 class="section-title-left">About Me</h2>
+      <p>
+        I'm a passionate developer and student who enjoys building responsive websites,
+        clean user interfaces, and practical projects for college and hackathons.
+        I focus on HTML, CSS, JavaScript, and I’m currently learning full stack
+        development and machine learning.
+      </p>
+
+      <div class="about-info">
+        <div class="about-item">
+          <i class="fa-regular fa-envelope"></i>
+          <span>parthdhakate01@gmail.com</span>
+        </div>
+        <div class="about-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 93071 25228</span>
+        </div>
+        <div class="about-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Pune, Maharashtra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right reveal">
+      <div class="about-card">
+        <div class="mini-box">
+          <h3>1+</h3>
+          <p>Years Learning</p>
+        </div>
+        <div class="mini-box">
+          <h3>10+</h3>
+          <p>Projects Built</p>
+        </div>
+        <div class="mini-box">
+          <h3>3+</h3>
+          <p>Hackathon / College Works</p>
+        </div>
+        <div class="mini-box">
+          <h3>100%</h3>
+          <p>Passion & Growth</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="section-header reveal">
+      <h2>Skills & Expertise</h2>
+      <p>Technologies and tools I work with</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-top">
+          <i class="fa-brands fa-html5 skill-icon"></i>
+          <span class="skill-tag">Frontend</span>
+        </div>
+        <h3>HTML & CSS</h3>
+        <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+        <span class="percent">65%</span>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-top">
+          <i class="fa-brands fa-js skill-icon"></i>
+          <span class="skill-tag">Frontend</span>
+        </div>
+        <h3>JavaScript</h3>
+        <div class="progress-bar"><div class="progress" style="width: 10%;"></div></div>
+        <span class="percent">10%</span>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-top">
+          <i class="fa-brands fa-react skill-icon"></i>
+          <span class="skill-tag">Framework</span>
+        </div>
+        <h3>React (Learning)</h3>
+        <div class="progress-bar"><div class="progress" style="width: 5%;"></div></div>
+        <span class="percent">5%</span>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-top">
+          <i class="fa-brands fa-python skill-icon"></i>
+          <span class="skill-tag">Programming</span>
+        </div>
+        <h3>Python</h3>
+        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+        <span class="percent">75%</span>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-top">
+          <i class="fa-solid fa-brain skill-icon"></i>
+          <span class="skill-tag">AI / ML</span>
+        </div>
+        <h3>Machine Learning Basics</h3>
+        <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+        <span class="percent">50%</span>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-top">
+          <i class="fa-brands fa-github skill-icon"></i>
+          <span class="skill-tag">Tools</span>
+        </div>
+        <h3>Git & GitHub</h3>
+        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+        <span class="percent">90%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="section-header reveal">
+      <h2>Featured Projects</h2>
+      <p>Some work that shows my skills</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80" alt="Project 1">
+        <div class="project-content">
+          <h3>College Event Website</h3>
+          <p>Responsive website for college event / startup style project with modern UI and sections.</p>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-buttons">
+            <a href="#" class="btn btn-small btn-primary">Live Demo</a>
+            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1000&q=80" alt="Project 2">
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>A premium personal portfolio with animations, project showcase, and responsive layout.</p>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-buttons">
+            <a href="#" class="btn btn-small btn-primary">Live Demo</a>
+            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80" alt="Project 3">
+        <div class="project-content">
+          <h3>AI / ML Mini Project</h3>
+          <p>Basic machine learning model project for learning prediction, classification, or text analysis.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>ML</span>
+            <span>UI</span>
+          </div>
+          <div class="project-buttons">
+            <a href="#" class="btn btn-small btn-primary">Live Demo</a>
+            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services section" id="services">
+    <div class="section-header reveal">
+      <h2>What I Can Do</h2>
+      <p>Services and strengths I can offer</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>Frontend Development</h3>
+        <p>Clean, modern and responsive websites using HTML, CSS and JavaScript.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h3>Responsive Design</h3>
+        <p>Mobile-friendly layouts that work smoothly on desktop, tablet and phone.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-pen-ruler"></i>
+        <h3>UI / UX Design</h3>
+        <p>Attractive sections, clean spacing, better readability and modern visual style.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Basic ML Integration</h3>
+        <p>Beginner-level AI/ML project interfaces and college project support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="section-header reveal">
+      <h2>Contact Me</h2>
+      <p>Let’s build something great together</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-left reveal">
+        <h3>Let's talk</h3>
+        <p>
+          If you want a portfolio, college website, landing page, or help with
+          a project, feel free to contact me.
+        </p>
+
+        <div class="contact-info-box">
+          <div class="contact-line">
+            <i class="fa-regular fa-envelope"></i>
+            <span>parthdhakate01@gmail.com</span>
+          </div>
+          <div class="contact-line">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 93071 25228</span>
+          </div>
+          <div class="contact-line">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Pune, Maharashtra</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Parth Dhakate. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
