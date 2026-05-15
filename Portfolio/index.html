@@ -417,9 +417,12 @@ form.addEventListener('submit', async (e) => {
       message: message
     }
   ])
-
-  console.log(data)
-  console.log(error)
+if(error){
+  console.log("ERROR:", error)
+}
+else{
+  console.log("SUCCESS:", data)
+}
 
   if(error){
 
