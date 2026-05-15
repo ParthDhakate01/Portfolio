@@ -327,14 +327,43 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject" required>
-        <textarea rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-message" id="formMessage"></p>
-      </form>
+     <form class="contact-form reveal" id="contactForm">
+
+  <input
+    type="text"
+    id="name"
+    placeholder="Your Name"
+    required
+  >
+
+  <input
+    type="email"
+    id="email"
+    placeholder="Your Email"
+    required
+  >
+
+  <input
+    type="text"
+    id="subject"
+    placeholder="Subject"
+    required
+  >
+
+  <textarea
+    id="message"
+    rows="6"
+    placeholder="Your Message"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn btn-primary">
+    Send Message
+  </button>
+
+  <p id="formMessage"></p>
+
+</form>
     </div>
   </section>
 
@@ -344,5 +373,80 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="module">
+
+  import { createClient }
+  from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+  // YOUR SUPABASE DETAILS
+  const supabaseUrl =
+   baptssnyniyysdxbkqmn
+
+  const supabaseKey =
+    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJhcHRzc255bml5eXNkeGJrcW1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NjM3MjcsImV4cCI6MjA5NDQzOTcyN30.byE_FeRWFVkcR6m6v9KF1x2xNuqUh1URmOA_hNPHPYM
+
+  // Create client
+  const supabase =
+    createClient(supabaseUrl, supabaseKey)
+
+  // Form
+  const form =
+    document.getElementById('contactForm')
+
+  form.addEventListener('submit',
+  async (e) => {
+
+    e.preventDefault()
+
+    // Get values
+    const name =
+      document.getElementById('name').value
+
+    const email =
+      document.getElementById('email').value
+
+    const subject =
+      document.getElementById('subject').value
+
+    const message =
+      document.getElementById('message').value
+
+    const formMessage =
+      document.getElementById('formMessage')
+
+    // Insert into database
+    const { error } =
+      await supabase
+      .from('messages')
+      .insert([
+        {
+          name,
+          email,
+          subject,
+          message
+        }
+      ])
+
+    if (error) {
+
+      console.log(error)
+
+      formMessage.innerText =
+        'Error sending message'
+
+    }
+
+    else {
+
+      formMessage.innerText =
+        'Message sent successfully!'
+
+      form.reset()
+
+    }
+
+  })
+
+</script>
 </body>
 </html>
