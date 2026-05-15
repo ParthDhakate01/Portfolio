@@ -327,11 +327,12 @@
         </div>
       </div>
 
-     <form class="contact-form reveal" id="contactForm">
+    <form class="contact-form reveal" id="contactForm">
 
   <input
     type="text"
     id="name"
+    name="name"
     placeholder="Your Name"
     required
   >
@@ -339,6 +340,7 @@
   <input
     type="email"
     id="email"
+    name="email"
     placeholder="Your Email"
     required
   >
@@ -346,12 +348,14 @@
   <input
     type="text"
     id="subject"
+    name="subject"
     placeholder="Subject"
     required
   >
 
   <textarea
     id="message"
+    name="message"
     rows="6"
     placeholder="Your Message"
     required
@@ -378,8 +382,11 @@
 import { createClient }
 from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-const supabaseUrl = 'https://baptssnyniyysdxbkqmn.supabase.co'
-const supabaseKey ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJhcHRzc255bml5eXNkeGJrcW1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NjM3MjcsImV4cCI6MjA5NDQzOTcyN30.byE_FeRWFVkcR6m6v9KF1x2xNuqUh1URmOA_hNPHPYM'
+const supabaseUrl =
+'https://baptssnyniyysdxbkqmn.supabase.co'
+
+const supabaseKey =
+'YOUR_PUBLISHABLE_KEY'
 
 const supabase =
 createClient(supabaseUrl, supabaseKey)
@@ -403,26 +410,22 @@ form.addEventListener('submit', async (e) => {
   const message =
   document.getElementById('message').value
 
+  console.log(name, email, subject, message)
+
+  const { error } =
+  await supabase
+  .from('message')
+  .insert([
+    {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message
+    }
+  ])
+
   const formMessage =
   document.getElementById('formMessage')
-
-  const { data, error } =
-await supabase
-.from('message')
-.insert([
-  {
-    name: name,
-    email: email,
-    subject: subject,
-    message: message
-  }
-])
-if(error){
-  console.log("ERROR:", error)
-}
-else{
-  console.log("SUCCESS:", data)
-}
 
   if(error){
 
