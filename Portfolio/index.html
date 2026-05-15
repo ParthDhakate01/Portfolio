@@ -375,77 +375,69 @@
   <script src="script.js"></script>
   <script type="module">
 
-  import { createClient }
-  from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+import { createClient }
+from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-  // YOUR SUPABASE DETAILS
-  const supabaseUrl =
-   baptssnyniyysdxbkqmn
+const supabaseUrl = 'https://baptssnyniyysdxbkqmn.supabase.co'
+const supabaseKey ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJhcHRzc255bml5eXNkeGJrcW1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NjM3MjcsImV4cCI6MjA5NDQzOTcyN30.byE_FeRWFVkcR6m6v9KF1x2xNuqUh1URmOA_hNPHPYM'
 
-  const supabaseKey =
-    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJhcHRzc255bml5eXNkeGJrcW1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4NjM3MjcsImV4cCI6MjA5NDQzOTcyN30.byE_FeRWFVkcR6m6v9KF1x2xNuqUh1URmOA_hNPHPYM
+const supabase =
+createClient(supabaseUrl, supabaseKey)
 
-  // Create client
-  const supabase =
-    createClient(supabaseUrl, supabaseKey)
+const form =
+document.getElementById('contactForm')
 
-  // Form
-  const form =
-    document.getElementById('contactForm')
+form.addEventListener('submit', async (e) => {
 
-  form.addEventListener('submit',
-  async (e) => {
+  e.preventDefault()
 
-    e.preventDefault()
+  const name =
+  document.getElementById('name').value
 
-    // Get values
-    const name =
-      document.getElementById('name').value
+  const email =
+  document.getElementById('email').value
 
-    const email =
-      document.getElementById('email').value
+  const subject =
+  document.getElementById('subject').value
 
-    const subject =
-      document.getElementById('subject').value
+  const message =
+  document.getElementById('message').value
 
-    const message =
-      document.getElementById('message').value
+  const formMessage =
+  document.getElementById('formMessage')
 
-    const formMessage =
-      document.getElementById('formMessage')
-
-    // Insert into database
-    const { error } =
-      await supabase
-      .from('messages')
-      .insert([
-        {
-          name,
-          email,
-          subject,
-          message
-        }
-      ])
-
-    if (error) {
-
-      console.log(error)
-
-      formMessage.innerText =
-        'Error sending message'
-
+  const { data, error } =
+  await supabase
+  .from('messages')
+  .insert([
+    {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message
     }
+  ])
 
-    else {
+  console.log(data)
+  console.log(error)
 
-      formMessage.innerText =
-        'Message sent successfully!'
+  if(error){
 
-      form.reset()
+    formMessage.innerText =
+    error.message
 
-    }
+  }
 
-  })
+  else{
+
+    formMessage.innerText =
+    'Message Sent Successfully'
+
+    form.reset()
+
+  }
+
+})
 
 </script>
 </body>
