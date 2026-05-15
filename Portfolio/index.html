@@ -327,13 +327,14 @@
         </div>
       </div>
 
-    <form class="contact-form reveal" id="contactForm">
+   <form class="contact-form reveal" id="contactForm">
 
   <input
     type="text"
     id="name"
     name="name"
     placeholder="Your Name"
+    autocomplete="name"
     required
   >
 
@@ -342,6 +343,7 @@
     id="email"
     name="email"
     placeholder="Your Email"
+    autocomplete="email"
     required
   >
 
@@ -376,8 +378,7 @@
     <p>© 2026 Parth Dhakate. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
-<script type="module">
+  <script type="module">
 
 import { createClient }
 from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
@@ -392,32 +393,35 @@ const supabase =
 createClient(supabaseUrl, supabaseKey)
 
 const form =
-document.getElementById('contactForm')
+document.querySelector('#contactForm')
 
 form.addEventListener('submit', async (e) => {
 
   e.preventDefault()
 
+  const formData = new FormData(form)
+
   const name =
-  document.getElementById('name').value
+  formData.get('name')
 
   const email =
-  document.getElementById('email').value
+  formData.get('email')
 
   const subject =
-  document.getElementById('subject').value
+  formData.get('subject')
 
   const message =
-  document.getElementById('message').value
+  formData.get('message')
 
-alert(
-  "Name: " + name +
-  "\nEmail: " + email +
-  "\nSubject: " + subject +
-  "\nMessage: " + message
-)
+  alert(
+    "Name: " + name +
+    "\nEmail: " + email +
+    "\nSubject: " + subject +
+    "\nMessage: " + message
+  )
 
 })
+
 </script>
 </body>
 </html>
