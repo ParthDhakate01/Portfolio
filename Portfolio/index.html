@@ -407,16 +407,16 @@ form.addEventListener('submit', async (e) => {
   document.getElementById('formMessage')
 
   const { data, error } =
-  await supabase
-  .from('messages')
-  .insert([
-    {
-      name: name,
-      email: email,
-      subject: subject,
-      message: message
-    }
-  ])
+await supabase
+.from('message')
+.insert([
+  {
+    name: name,
+    email: email,
+    subject: subject,
+    message: message
+  }
+])
 if(error){
   console.log("ERROR:", error)
 }
