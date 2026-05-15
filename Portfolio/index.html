@@ -410,19 +410,12 @@ form.addEventListener('submit', async (e) => {
   const message =
   document.getElementById('message').value
 
-  console.log(name, email, subject, message)
+  alert(name)
+  alert(email)
+  alert(subject)
+  alert(message)
 
-  const { error } =
-  await supabase
-  .from('message')
-  .insert([
-    {
-      name: name,
-      email: email,
-      subject: subject,
-      message: message
-    }
-  ])
+})
 
   const formMessage =
   document.getElementById('formMessage')
