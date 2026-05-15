@@ -403,50 +403,24 @@ form.addEventListener('submit', async (e) => {
 
   const formData = new FormData(form)
 
-  const name =
-  formData.get('name')
+  const name = formData.get('name')
+  const email = formData.get('email')
+  const subject = formData.get('subject')
+  const message = formData.get('message')
 
-  const email =
-  formData.get('email')
+  console.log(name)
+  console.log(email)
+  console.log(subject)
+  console.log(message)
 
-  const subject =
-  formData.get('subject')
-
-  const message =
-  formData.get('message')
-
-  const { error } =
-  await supabase
-  .from('message')
-  .insert([
-    {
-      name: name,
-      email: email,
-      subject: subject,
-      message: message
-    }
-  ])
-
-  const formMessage =
-  document.getElementById('formMessage')
-
-  if(error){
-
-    formMessage.innerText =
-    error.message
-
-    console.log(error)
-
-  }
-
-  else{
-
-    formMessage.innerText =
-    'Message Sent Successfully ✅'
-
-    form.reset()
-
-  }
+  alert(
+    JSON.stringify({
+      name,
+      email,
+      subject,
+      message
+    })
+  )
 
 })
 
